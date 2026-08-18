@@ -1,0 +1,114 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-7);
+  color: var(--color-base-text-strong);
+  margin-bottom: var(--space-0-5);
+}
+
+.modeTag {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-4);
+  color: var(--color-accent-bg);
+  opacity: 0.8;
+}
+
+.subtitle {
+  font-size: var(--font-size-2);
+  color: var(--color-base-text-muted);
+}
+
+.exportCard,
+.chartCard,
+.snapshotCard {
+  margin-bottom: var(--space-4);
+}
+
+.cardIcon {
+  width: var(--size-5);
+  height: var(--size-5);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--space-1-5);
+}
+
+.exportButtons {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.buttonIcon {
+  width: var(--size-4);
+  height: var(--size-4);
+  margin-right: var(--space-1);
+}
+
+.chartPlaceholder {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  color: var(--color-base-text-muted);
+}
+
+.placeholderIcon {
+  width: var(--size-20);
+  height: var(--size-20);
+  margin: 0 auto var(--space-3);
+  opacity: 0.2;
+}
+
+.chartPlaceholder h3 {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-6);
+  color: var(--color-base-text);
+  margin-bottom: var(--space-2);
+}
+
+.chartPlaceholder p {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.snapshotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.snapshotItem {
+  padding: var(--space-3);
+  background: var(--color-base-bg-subtle);
+  border-radius: var(--radius-3);
+  text-align: center;
+}
+
+.snapshotLabel {
+  font-size: var(--font-size-1);
+  color: var(--color-base-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.snapshotValue {
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-7);
+  color: var(--color-base-text-strong);
+}
+
+@media (max-width: 768px) {
+  .exportButtons {
+    flex-direction: column;
+  }
+
+  .snapshotGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

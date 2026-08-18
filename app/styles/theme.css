@@ -1,0 +1,492 @@
+/*
+ * Okanos Ethereal Depths: Abyss Edition
+ * A modern deep-sea experience with vibrant bioluminescent accents
+ * Light Mode: Clean pearlescent surfaces with cerulean highlights
+ * Dark Mode: Deep abyss with glowing cerulean, purple, and mint accents
+ */
+
+/* Typography */
+html {
+  --font-display: var(--font-weight-7) var(--font-size-fluid-3) var(--font-rounded-sans);
+  --font-heading: var(--font-weight-6) var(--font-size-fluid-2) var(--font-rounded-sans);
+  --font-subheading: var(--font-weight-5) var(--font-size-fluid-1) var(--font-neo-grotesque);
+  --font-body: var(--font-size-fluid-0) var(--font-neo-grotesque);
+  --font-caption: var(--font-size-0) var(--font-neo-grotesque);
+  --font-code: var(--font-size-fluid-0) var(--font-monospace-code);
+}
+
+/* Okanos Ethereal Depths - Abyss Palette */
+html {
+  /* Core Abyss Palette */
+  --abyss-black: #000A11;        /* Deep background - absolute depths */
+  --deep-cerulean: #0F6FFF;      /* Primary accent - electric blue */
+  --tide-purple: #6C4BFF;        /* Secondary accent - mystical violet */
+  --glacier-mint: #A8FFE3;       /* Highlight/success - ice crystal green */
+  --pearl-mist: #E9F8FF;         /* Surfaces/subtle tints - luminous fog */
+  
+  /* Extended palette for depth and variation */
+  --abyss-black-light: #0A1419;  /* Slightly lighter black for layering */
+  --abyss-black-lighter: #141F27; /* Even lighter for elevated surfaces */
+  --cerulean-dark: #0A56CC;      /* Darker cerulean for active states */
+  --cerulean-light: #3D8FFF;     /* Lighter cerulean for hover */
+  --purple-dark: #5238CC;        /* Darker purple */
+  --purple-light: #8A6FFF;       /* Lighter purple */
+  --mint-dark: #7AEAC8;          /* Darker mint */
+  --mint-light: #C3FFF0;         /* Lighter mint */
+  --pearl-dark: #C5E8F7;         /* Darker pearl */
+  --pearl-darker: #A0D5EC;       /* Even darker pearl */
+
+  /* Border radius - modern squircle system */
+  --radius-squircle-xs: 6px;
+  --radius-squircle-sm: 10px;
+  --radius-squircle-md: 16px;
+  --radius-squircle-lg: 20px;
+  --radius-squircle-xl: 28px;
+  --radius-squircle-2xl: 36px;
+}
+
+/* Light Theme - Pearlescent Surfaces */
+html {
+  /* Backgrounds - Clean pearl mist with cerulean hints */
+  --color-base-bg-app: #FFFFFF;               /* Pure white base */
+  --color-base-bg-subtle: #F9FCFF;            /* Barely tinted blue-white */
+  --color-base-bg: #E9F8FF;                   /* Pearl mist - luminous fog */
+  --color-base-bg-hover: #D9F2FF;             /* Slightly deeper pearl */
+  --color-base-bg-active: #C5E8F7;            /* Active pearl */
+
+  /* Borders - Soft cerulean-tinted grays */
+  --color-base-border-subtle: #E0F1FF;
+  --color-base-border: #C5E8F7;
+  --color-base-border-hover: #A0D5EC;
+
+  /* Text - Deep abyss black for maximum contrast */
+  --color-base-text-muted: #4A6C7E;
+  --color-base-text-subtle: #2A4A5C;
+  --color-base-text: #0A1419;                 /* Near-black for readability */
+  --color-base-text-strong: #000A11;          /* Abyss black */
+
+  /* Accent - Cerulean highlights */
+  --color-accent-bg-app: #F0F8FF;
+  --color-accent-bg-subtle: #E0F1FF;
+  --color-accent-bg: #D0EAFF;
+  --color-accent-bg-hover: #B8E0FF;
+  --color-accent-bg-active: #A0D5FF;
+
+  --color-accent-border-subtle: #C0E6FF;
+  --color-accent-border: #90D0FF;
+  --color-accent-border-hover: #60B8FF;
+
+  --color-accent-text-muted: #3D8FFF;
+  --color-accent-text-subtle: #0F6FFF;
+  --color-accent-text: #0A56CC;
+  --color-accent-text-strong: #083E99;
+
+  /* Pop - Deep Cerulean (primary action) */
+  --color-pop-bg: #0F6FFF;                    /* Deep cerulean */
+  --color-pop-bg-hover: #3D8FFF;
+  --color-pop-text: #FFFFFF;
+
+  /* Danger - Tide Purple (errors/warnings) */
+  --color-danger-bg: #6C4BFF;                 /* Tide purple */
+  --color-danger-bg-hover: #8A6FFF;
+  --color-danger-text: #FFFFFF;
+
+  /* Success - Glacier Mint (success/positive) */
+  --color-success-bg: #A8FFE3;                /* Glacier mint */
+  --color-success-bg-hover: #C3FFF0;
+  --color-success-text: #0A1419;
+
+  /* Warning - Purple variant */
+  --color-warning-bg: #8A6FFF;
+  --color-warning-bg-hover: #A48FFF;
+  --color-warning-text: #FFFFFF;
+
+  /* Shadows - Soft cerulean-tinted shadows */
+  --shadow-color: 15 111 255;                 /* Deep cerulean RGB */
+  --shadow-strength: 2%;
+  --shadow-1: 0 1px 3px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%));
+  --shadow-2: 0 2px 6px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+              0 0 12px rgba(15, 111, 255, 0.03);
+  --shadow-3: 0 4px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%)),
+              0 0 18px rgba(15, 111, 255, 0.05);
+  --shadow-4: 0 8px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)),
+              0 0 24px rgba(15, 111, 255, 0.07);
+  --shadow-5: 0 12px 28px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 11%)),
+              0 0 36px rgba(15, 111, 255, 0.09);
+  --shadow-6: 0 16px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 13%)),
+              0 0 48px rgba(15, 111, 255, 0.11);
+
+  /* Glow effects - Subtle cerulean shimmer */
+  --glow-cerulean: 0 0 16px rgba(15, 111, 255, 0.25), 0 0 32px rgba(15, 111, 255, 0.15), 0 0 48px rgba(15, 111, 255, 0.08);
+  --glow-purple: 0 0 16px rgba(108, 75, 255, 0.25), 0 0 32px rgba(108, 75, 255, 0.15), 0 0 48px rgba(108, 75, 255, 0.08);
+  --glow-mint: 0 0 16px rgba(168, 255, 227, 0.3), 0 0 32px rgba(168, 255, 227, 0.2), 0 0 48px rgba(168, 255, 227, 0.1);
+}
+
+/* Dark Theme - Deep Abyss with Bioluminescence */
+html.dark-theme {
+  /* Backgrounds - Absolute abyss depths with layered blacks */
+  --color-base-bg-app: #000A11;               /* Abyss black - absolute depths */
+  --color-base-bg-subtle: #0A1419;            /* Slightly lighter black */
+  --color-base-bg: #141F27;                   /* Elevated surface black */
+  --color-base-bg-hover: #1A2832;
+  --color-base-bg-active: #20323D;
+
+  /* Borders - Cerulean-tinted dark borders with subtle glow */
+  --color-base-border-subtle: #1A2832;
+  --color-base-border: #20323D;
+  --color-base-border-hover: #2A4250;
+
+  /* Text - Pearl mist for high contrast */
+  --color-base-text-muted: #6A8595;
+  --color-base-text-subtle: #9FB5C5;
+  --color-base-text: #E9F8FF;                 /* Pearl mist */
+  --color-base-text-strong: #FFFFFF;
+
+  /* Accent - Cerulean-tinted surfaces */
+  --color-accent-bg-app: #0A1419;
+  --color-accent-bg-subtle: #0F1D28;
+  --color-accent-bg: #14253A;
+  --color-accent-bg-hover: #1A304C;
+  --color-accent-bg-active: #20385A;
+
+  --color-accent-border-subtle: #1A304C;
+  --color-accent-border: #20385A;
+  --color-accent-border-hover: #2A4568;
+
+  --color-accent-text-muted: #3D8FFF;
+  --color-accent-text-subtle: #60A8FF;
+  --color-accent-text: #90C8FF;
+  --color-accent-text-strong: #C5E8FF;
+
+  /* Pop - Deep Cerulean with intense glow */
+  --color-pop-bg: #0F6FFF;                    /* Deep cerulean */
+  --color-pop-bg-hover: #3D8FFF;
+  --color-pop-text: #FFFFFF;
+
+  /* Danger - Tide Purple with bioluminescent pulse */
+  --color-danger-bg: #6C4BFF;                 /* Tide purple */
+  --color-danger-bg-hover: #8A6FFF;
+  --color-danger-text: #FFFFFF;
+
+  /* Success - Glacier Mint with ethereal glow */
+  --color-success-bg: #A8FFE3;                /* Glacier mint */
+  --color-success-bg-hover: #C3FFF0;
+  --color-success-text: #000A11;
+
+  /* Warning - Purple variant with glow */
+  --color-warning-bg: #8A6FFF;
+  --color-warning-bg-hover: #A48FFF;
+  --color-warning-text: #FFFFFF;
+
+  /* Shadows - Deep, dramatic black with subtle cerulean glow accents */
+  --shadow-color: 0 10 17;                    /* Abyss black RGB */
+  --shadow-strength: 85%;
+  --shadow-1: 0 2px 4px hsl(var(--shadow-color) / 95%),
+              0 1px 2px hsl(var(--shadow-color) / 98%);
+  --shadow-2: 0 4px 8px hsl(var(--shadow-color) / 95%),
+              0 2px 4px hsl(var(--shadow-color) / 98%),
+              0 0 12px rgba(15, 111, 255, 0.08);
+  --shadow-3: 0 8px 16px hsl(var(--shadow-color) / 95%),
+              0 4px 8px hsl(var(--shadow-color) / 98%),
+              0 0 20px rgba(15, 111, 255, 0.12);
+  --shadow-4: 0 16px 32px hsl(var(--shadow-color) / 95%),
+              0 8px 16px hsl(var(--shadow-color) / 98%),
+              0 0 30px rgba(15, 111, 255, 0.15);
+  --shadow-5: 0 24px 48px hsl(var(--shadow-color) / 95%),
+              0 12px 24px hsl(var(--shadow-color) / 98%),
+              0 0 40px rgba(15, 111, 255, 0.18);
+  --shadow-6: 0 32px 64px hsl(var(--shadow-color) / 95%),
+              0 16px 32px hsl(var(--shadow-color) / 98%),
+              0 0 50px rgba(15, 111, 255, 0.2);
+
+  /* Glow effects - Vibrant bioluminescent glows */
+  --glow-cerulean: 0 0 24px rgba(15, 111, 255, 0.6), 0 0 48px rgba(15, 111, 255, 0.35), 0 0 72px rgba(15, 111, 255, 0.2);
+  --glow-purple: 0 0 24px rgba(108, 75, 255, 0.6), 0 0 48px rgba(108, 75, 255, 0.35), 0 0 72px rgba(108, 75, 255, 0.2);
+  --glow-mint: 0 0 24px rgba(168, 255, 227, 0.5), 0 0 48px rgba(168, 255, 227, 0.3), 0 0 72px rgba(168, 255, 227, 0.18);
+}
+
+/* Gradients - Modern Bioluminescent Transitions */
+html {
+  /* Light mode: Clean pearl gradients with cerulean accents */
+  --gradient-brand: linear-gradient(180deg, 
+    #FFFFFF 0%,
+    #d2e7fc 30%,
+    #a8e3fe 70%,
+    #7dd1ff 100%
+  );
+  --gradient-ocean: linear-gradient(180deg, 
+    #FFFFFF 0%, 
+    rgba(15, 111, 255, 0.05) 50%,
+    #E9F8FF 100%
+  );
+  --gradient-shimmer: linear-gradient(135deg, 
+    #E9F8FF 0%, 
+    #D9F2FF 20%,
+    #C5E8F7 40%,
+    #A8FFE3 60%,          /* Glacier mint */
+    #0F6FFF 80%,          /* Deep cerulean */
+    #E9F8FF 100%
+  );
+  --gradient-depth: linear-gradient(180deg, 
+    rgba(255,255,255,0.95) 0%, 
+    rgba(233,248,255,0.7) 30%,
+    rgba(233,248,255,0.5) 60%, 
+    rgba(233,248,255,0.2) 100%
+  );
+  /* Subtle cerulean shimmer for animated backgrounds */
+  --gradient-refraction: linear-gradient(45deg,
+    transparent 0%,
+    rgba(15, 111, 255, 0.03) 25%,
+    transparent 50%,
+    rgba(168, 255, 227, 0.03) 75%,
+    transparent 100%
+  );
+}
+
+/* Dark mode gradients: Deep abyss with bioluminescent accents */
+html.dark-theme {
+  --gradient-brand: linear-gradient(180deg, 
+    #000A11 0%,           /* Abyss black */
+    #0A1419 30%,
+    #141F27 60%,
+    #0A1419 100%
+  );
+  --gradient-ocean: linear-gradient(180deg, 
+    #000A11 0%, 
+    rgba(15, 111, 255, 0.12) 50%,
+    #141F27 100%
+  );
+  --gradient-shimmer: linear-gradient(135deg, 
+    #000A11 0%, 
+    #141F27 20%,
+    #0F6FFF 40%,          /* Deep cerulean glow */
+    #A8FFE3 60%,          /* Glacier mint glow */
+    #6C4BFF 80%,          /* Tide purple glow */
+    #141F27 100%
+  );
+  --gradient-depth: linear-gradient(180deg, 
+    rgba(0,10,17,0.98) 0%, 
+    rgba(20,31,39,0.8) 30%,
+    rgba(20,31,39,0.6) 60%, 
+    rgba(20,31,39,0.3) 100%
+  );
+  /* Vibrant bioluminescent pulse for animated backgrounds */
+  --gradient-bioluminescence: radial-gradient(circle at 30% 50%,
+    rgba(15, 111, 255, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(circle at 70% 50%,
+    rgba(108, 75, 255, 0.12) 0%,
+    transparent 50%
+  ),
+  radial-gradient(circle at 50% 80%,
+    rgba(168, 255, 227, 0.08) 0%,
+    transparent 50%
+  );
+}
+
+/* Global Styles */
+html {
+  font: var(--font-body);
+  color: var(--color-base-text);
+  background-color: var(--color-base-bg-app);
+  line-height: var(--font-lineheight-3);
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Ambient Ocean Current - Subtle global background animation */
+@keyframes ocean-current {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  background: var(--gradient-refraction);
+  background-size: 400% 400%;
+  animation: ocean-current 20s ease-in-out infinite;
+}
+
+html.dark-theme body::before {
+  background: var(--gradient-bioluminescence);
+  background-size: 200% 200%;
+  animation: ocean-current 30s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  body::before {
+    animation: none !important;
+  }
+}
+
+/* Focus States - Deep Cerulean glow */
+*:focus-visible {
+  outline: 2px solid var(--deep-cerulean);
+  outline-offset: 2px;
+  box-shadow: var(--glow-cerulean);
+  border-radius: var(--radius-squircle-xs);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--deep-cerulean);
+  color: #FFFFFF;
+}
+
+html.dark-theme ::selection {
+  background-color: var(--glacier-mint);
+  color: var(--abyss-black);
+}
+
+/* Cursors */
+* {
+  cursor: default;
+}
+
+button,
+a,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+select,
+.interactive {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  cursor: text;
+}
+
+/* Dynamic Immersion - Animation Keyframes */
+
+/* Cerulean shimmer for light mode */
+@keyframes cerulean-shimmer {
+  0%, 100% {
+    background-position: 0% 0%;
+    opacity: 0.25;
+  }
+  50% {
+    background-position: 100% 100%;
+    opacity: 0.4;
+  }
+}
+
+/* Bioluminescent pulse for dark mode */
+@keyframes bioluminescent-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.3);
+  }
+}
+
+/* Glacier drift for success elements */
+@keyframes glacier-drift {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+/* Purple pulse for danger/warning */
+@keyframes purple-pulse {
+  0%, 100% {
+    box-shadow: var(--glow-purple);
+  }
+  50% {
+    box-shadow: 
+      0 0 32px rgba(108, 75, 255, 0.8), 
+      0 0 64px rgba(108, 75, 255, 0.4), 
+      0 0 96px rgba(108, 75, 255, 0.25);
+  }
+}
+
+/* Cerulean glow pulse for primary actions */
+@keyframes cerulean-pulse {
+  0%, 100% {
+    box-shadow: var(--glow-cerulean);
+  }
+  50% {
+    box-shadow: 
+      0 0 28px rgba(15, 111, 255, 0.7), 
+      0 0 56px rgba(15, 111, 255, 0.4), 
+      0 0 84px rgba(15, 111, 255, 0.25);
+  }
+}
+
+/* Mint glow pulse for success states */
+@keyframes mint-pulse {
+  0%, 100% {
+    box-shadow: var(--glow-mint);
+  }
+  50% {
+    box-shadow: 
+      0 0 28px rgba(168, 255, 227, 0.6), 
+      0 0 56px rgba(168, 255, 227, 0.35), 
+      0 0 84px rgba(168, 255, 227, 0.2);
+  }
+}
+
+/* Ripple for interactions */
+@keyframes surface-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

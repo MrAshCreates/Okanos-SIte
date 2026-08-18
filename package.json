@@ -1,0 +1,54 @@
+{
+  "name": "okanos-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@dazl/color-scheme": "^1.3.0",
+    "@react-router/node": "^8.3.0",
+    "@react-router/serve": "^8.3.0",
+    "classnames": "^2.5.1",
+    "cmdk": "^1.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "input-otp": "^1.4.2",
+    "isbot": "^5.2.1",
+    "lucide-react": "^1.31.0",
+    "radix-ui": "^1.6.7",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-hook-form": "^7.85.0",
+    "react-resizable-panels": "^4.12.3",
+    "react-router": "^8.3.0",
+    "recharts": "^3.10.1",
+    "sonner": "^2.0.8",
+    "vaul": "^1.1.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@dazl-lib/radix-ui": "^0.1.0",
+    "@dazl/dev": "^1.7.0",
+    "@react-router/dev": "^8.3.0",
+    "@types/node": "26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "typescript": "~7.0.2",
+    "vite": "^8.2.1"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "endOfLine": "auto"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "esbuild@0.28.2": true
+  },
+  "overrides": {
+    "valibot": "^1.4.2",
+    "@vitejs/plugin-rsc": "^0.5.34"
+  }
+}

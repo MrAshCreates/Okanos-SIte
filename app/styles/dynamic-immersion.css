@@ -1,0 +1,413 @@
+/*
+ * Okanos Dynamic Immersion Utilities
+ * Reusable classes for dynamic underwater effects
+ * Apply these classes to components for enhanced immersion
+ */
+
+/* ========================================
+   TRANSLUCENT WATER LAYERS
+   ======================================== */
+
+/* Frosted glass effect for cards and navigation */
+.translucent-water {
+  background: var(--color-base-bg);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid var(--color-base-border-subtle);
+}
+
+.translucent-water-strong {
+  background: var(--color-base-bg);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--color-base-border);
+}
+
+.translucent-water-subtle {
+  background: rgba(232, 244, 248, 0.6);
+  backdrop-filter: blur(8px) saturate(1.1);
+  -webkit-backdrop-filter: blur(8px) saturate(1.1);
+  border: 1px solid var(--color-base-border-subtle);
+}
+
+html.dark-theme .translucent-water-subtle {
+  background: rgba(26, 47, 69, 0.6);
+}
+
+/* ========================================
+   SHIMMER & GLOW EFFECTS
+   ======================================== */
+
+/* Refraction shimmer for light mode backgrounds */
+.refraction-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.refraction-shimmer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--gradient-refraction);
+  background-size: 400% 400%;
+  animation: refraction-shimmer 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.refraction-shimmer > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bioluminescent pulse for dark mode */
+.bioluminescent-pulse {
+  position: relative;
+}
+
+html.dark-theme .bioluminescent-pulse {
+  animation: bioluminescent-pulse 4s ease-in-out infinite;
+}
+
+/* Wave shimmer for action buttons */
+.wave-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease-out;
+  pointer-events: none;
+}
+
+.wave-shimmer:hover::after {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+}
+
+html.dark-theme .wave-shimmer::after {
+  background: radial-gradient(circle, rgba(42, 127, 184, 0.4) 0%, transparent 70%);
+}
+
+/* ========================================
+   PLANT ANIMATIONS (SUCCESS STATES)
+   ======================================== */
+
+/* Gentle swaying for light mode success elements */
+.plant-sway {
+  animation: plant-sway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Upward drift for dark mode success elements */
+html.dark-theme .plant-drift {
+  animation: plant-drift 5s ease-in-out infinite;
+}
+
+/* Combined effect */
+.plant-animated {
+  animation: plant-sway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+html.dark-theme .plant-animated {
+  animation: plant-drift 5s ease-in-out infinite;
+}
+
+/* ========================================
+   CORAL ANIMATIONS (DANGER STATES)
+   ======================================== */
+
+/* Incandescent glow for light mode danger */
+.coral-incandescent {
+  animation: coral-incandescent 3s ease-in-out infinite;
+}
+
+/* Hydrothermal vent pulse for dark mode danger */
+html.dark-theme .coral-pulsate {
+  animation: hydrothermal-pulse 2.5s ease-in-out infinite;
+}
+
+/* Combined effect */
+.coral-animated {
+  animation: coral-incandescent 3s ease-in-out infinite;
+}
+
+html.dark-theme .coral-animated {
+  animation: hydrothermal-pulse 2.5s ease-in-out infinite;
+}
+
+/* ========================================
+   SURFACE RIPPLE EFFECT
+   ======================================== */
+
+/* Surface ripple on interaction */
+.surface-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.surface-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(74, 129, 201, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.surface-ripple:active::before {
+  animation: surface-ripple 0.6s ease-out;
+}
+
+html.dark-theme .surface-ripple::before {
+  background: radial-gradient(circle, rgba(42, 127, 184, 0.6) 0%, transparent 70%);
+}
+
+/* ========================================
+   GRADIENT BACKGROUNDS
+   ======================================== */
+
+/* Wave crest gradient (light mode) */
+.wave-crest-bg {
+  background: var(--gradient-wave-crest);
+  background-size: 200% 200%;
+  animation: ocean-current 12s ease-in-out infinite;
+}
+
+/* Hydrothermal vent gradient (dark mode) */
+html.dark-theme .hydrothermal-bg {
+  background: var(--gradient-hydrothermal);
+  background-size: 150% 150%;
+  animation: ocean-current 15s ease-in-out infinite;
+}
+
+/* Shimmer gradient overlay */
+.shimmer-overlay {
+  position: relative;
+}
+
+.shimmer-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-shimmer);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.shimmer-overlay:hover::after {
+  opacity: 0.15;
+}
+
+html.dark-theme .shimmer-overlay:hover::after {
+  opacity: 0.25;
+}
+
+/* ========================================
+   DEPTH LAYERING
+   ======================================== */
+
+/* Multi-layered shadow for profound depth */
+.depth-layer-1 {
+  box-shadow: var(--shadow-2);
+}
+
+.depth-layer-2 {
+  box-shadow: var(--shadow-3);
+}
+
+.depth-layer-3 {
+  box-shadow: var(--shadow-4);
+}
+
+.depth-layer-4 {
+  box-shadow: var(--shadow-5);
+}
+
+.depth-layer-5 {
+  box-shadow: var(--shadow-6);
+}
+
+/* Elevated with glow in dark mode */
+html.dark-theme .elevated-glow {
+  box-shadow: var(--shadow-4), var(--glow-wave);
+}
+
+/* ========================================
+   FLUID BORDERS
+   ======================================== */
+
+/* Liquid border effect on hover */
+.liquid-border {
+  border: 1px solid var(--color-base-border);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.liquid-border:hover {
+  border-color: var(--color-base-border-hover);
+  box-shadow: 0 0 0 1px var(--color-base-border-hover), var(--glow-wave);
+}
+
+/* Gradient border (animated) */
+.gradient-border {
+  position: relative;
+  border: 1px solid transparent;
+  background: var(--color-base-bg);
+  background-clip: padding-box;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-shimmer);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ocean-current 10s ease infinite;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+html.dark-theme .gradient-border::before {
+  opacity: 0.5;
+}
+
+/* ========================================
+   SUN FLARE ACCENTS (LIGHT MODE)
+   ======================================== */
+
+.sun-flare-accent {
+  position: relative;
+}
+
+.sun-flare-accent::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, var(--okanos-sun-flare) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: bioluminescent-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+html.dark-theme .sun-flare-accent::before {
+  display: none;
+}
+
+/* ========================================
+   ABYSSAL GLOW ACCENTS (DARK MODE)
+   ======================================== */
+
+html.dark-theme .abyssal-glow-accent {
+  position: relative;
+}
+
+html.dark-theme .abyssal-glow-accent::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(42, 127, 184, 0.2) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: bioluminescent-pulse 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ========================================
+   RESPONSIVE FLUID SIZING
+   ======================================== */
+
+/* Ensure fluid typography and spacing */
+.fluid-text {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: var(--font-lineheight-3);
+}
+
+.fluid-heading {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: var(--font-lineheight-1);
+}
+
+.fluid-display {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: var(--font-lineheight-0);
+}
+
+/* Fluid spacing */
+.fluid-gap {
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.fluid-padding {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.fluid-margin {
+  margin: clamp(1rem, 3vw, 2rem);
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .refraction-shimmer::before,
+  .bioluminescent-pulse,
+  .plant-sway,
+  .plant-drift,
+  .plant-animated,
+  .coral-incandescent,
+  .coral-pulsate,
+  .coral-animated,
+  .wave-crest-bg,
+  .hydrothermal-bg,
+  .sun-flare-accent::before,
+  .abyssal-glow-accent::before,
+  .gradient-border::before {
+    animation: none !important;
+  }
+
+  .surface-ripple:active::before {
+    animation: none !important;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+    transition: opacity 0.2s ease;
+  }
+}

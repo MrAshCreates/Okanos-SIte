@@ -1,0 +1,222 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-base-bg-app);
+}
+
+/* Mobile Header */
+.mobileHeader {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2);
+  background: var(--color-base-bg);
+  border-bottom: 1px solid var(--color-base-border-subtle);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 60px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  padding: var(--space-1);
+  cursor: pointer;
+  color: var(--color-base-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-2);
+  transition: background-color 0.2s;
+}
+
+.menuButton:hover {
+  background: var(--color-base-bg-hover);
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-2);
+  color: var(--color-base-text);
+}
+
+.logoImage {
+  width: var(--size-6);
+  height: var(--size-6);
+  border-radius: var(--radius-2);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: var(--color-base-bg);
+  border-right: 1px solid var(--color-base-border-subtle);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.sidebarHeader {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-base-border-subtle);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-base-text);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brandName {
+  font-weight: var(--font-weight-7);
+  font-size: var(--font-size-3);
+  color: var(--color-base-text-strong);
+}
+
+.productName {
+  font-size: var(--font-size-0);
+  color: var(--color-base-text-muted);
+}
+
+.beta {
+  color: var(--color-accent-bg);
+  font-weight: var(--font-weight-6);
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+  padding: var(--space-3) var(--space-2);
+  overflow-y: auto;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2-5);
+  border-radius: var(--radius-2);
+  text-decoration: none;
+  color: var(--color-base-text);
+  font-weight: var(--font-weight-5);
+  transition: all 0.2s;
+}
+
+.navLink:hover {
+  background: var(--color-base-bg-hover);
+  color: var(--color-base-text-strong);
+}
+
+.navLink.active {
+  background: var(--color-accent-bg);
+  color: var(--color-accent-text);
+}
+
+.navIcon {
+  width: var(--size-5);
+  height: var(--size-5);
+}
+
+/* Sidebar Footer */
+.sidebarFooter {
+  padding: var(--space-3);
+  border-top: 1px solid var(--color-base-border-subtle);
+}
+
+.userInfo {
+  margin-bottom: var(--space-2);
+  padding: var(--space-2);
+  background: var(--color-base-bg-subtle);
+  border-radius: var(--radius-2);
+}
+
+.userName {
+  font-weight: var(--font-weight-6);
+  color: var(--color-base-text-strong);
+  margin-bottom: 2px;
+}
+
+.userEmail {
+  font-size: var(--font-size-0);
+  color: var(--color-base-text-muted);
+}
+
+.logoutButton {
+  width: 100%;
+  justify-content: flex-start;
+  gap: var(--space-2);
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  margin-left: 280px;
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+
+/* Sidebar Overlay for Mobile */
+.sidebarOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mobileHeader {
+    display: flex;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .sidebarOverlay {
+    display: block;
+  }
+
+  .main {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: var(--space-2);
+  }
+}

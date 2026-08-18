@@ -1,0 +1,391 @@
+.container {
+  min-height: 100vh;
+  background: var(--color-base-bg-app);
+}
+
+.hero {
+  padding: var(--space-8) var(--space-2-5) var(--space-6);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: var(--color-base-text-subtle);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.section {
+  padding: var(--space-6) var(--space-2-5);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  text-align: center;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.sectionSubtitle {
+  font-size: 1.0625rem;
+  color: var(--color-base-text-subtle);
+  text-align: center;
+  margin: 0 0 var(--space-5) 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.philosophyItem {
+  text-align: center;
+  padding: var(--space-3);
+  background: var(--color-base-bg);
+  border-radius: var(--radius-squircle-lg);
+  border: 1px solid var(--color-base-border-subtle);
+  transition: all 0.3s var(--ease-3);
+}
+
+.philosophyItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--color-base-border);
+}
+
+.philosophyIcon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.philosophyTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-base-text-strong);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.philosophyDescription {
+  color: var(--color-base-text-subtle);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.cardItem {
+  background: var(--color-base-bg);
+  border-radius: var(--radius-squircle-lg);
+  padding: var(--space-3);
+  border: 1px solid var(--color-base-border-subtle);
+  transition: all 0.3s var(--ease-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+  border-color: var(--color-base-border);
+}
+
+.cardHeader {
+  margin-bottom: var(--space-2-5);
+  padding-bottom: var(--space-2-5);
+  border-bottom: 1px solid var(--color-base-border-subtle);
+}
+
+.cardName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  margin: 0 0 var(--space-0-5) 0;
+}
+
+.cardTarget {
+  color: var(--color-base-text-subtle);
+  margin: 0 0 var(--space-0-5) 0;
+  font-size: 0.875rem;
+}
+
+.cardFee {
+  color: var(--color-accent-text);
+  font-weight: 600;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.cardRewards {
+  margin-bottom: var(--space-2-5);
+}
+
+.cardRewardsTitle {
+  font-weight: 600;
+  color: var(--color-base-text);
+  margin: 0 0 var(--space-1) 0;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardRewardsText {
+  color: var(--color-base-text);
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.9375rem;
+}
+
+.cardPerks {
+  margin-bottom: var(--space-2-5);
+  flex-grow: 1;
+}
+
+.cardPerksTitle {
+  font-weight: 600;
+  color: var(--color-base-text);
+  margin: 0 0 var(--space-1-5) 0;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardPerksList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cardPerkItem {
+  color: var(--color-base-text-subtle);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: var(--space-2);
+}
+
+.cardPerkItem::before {
+  content: "•";
+  color: var(--color-accent-text);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.cardNetwork {
+  color: var(--color-base-text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-align: center;
+  padding: var(--space-1);
+  background: var(--color-base-bg-subtle);
+  border-radius: var(--radius-squircle-sm);
+  margin-top: auto;
+}
+
+.comparisonTable {
+  margin-top: var(--space-5);
+  overflow-x: auto;
+  border-radius: var(--radius-squircle-lg);
+  border: 1px solid var(--color-base-border-subtle);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-base-bg);
+}
+
+.tableHeader {
+  background: var(--color-base-bg-subtle);
+}
+
+.tableHeaderCell {
+  padding: var(--space-2);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-base-text-strong);
+  border-bottom: 1px solid var(--color-base-border-subtle);
+  font-size: 0.875rem;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-base-border-subtle);
+  transition: background 0.2s var(--ease-2);
+}
+
+.tableRow:hover {
+  background: var(--color-base-bg-subtle);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  padding: var(--space-2);
+  color: var(--color-base-text-subtle);
+  vertical-align: top;
+  font-size: 0.875rem;
+}
+
+.tableCellStrong {
+  font-weight: 600;
+  color: var(--color-base-text-strong);
+}
+
+.featuresSection {
+  margin-top: var(--space-5);
+}
+
+.featuresList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+}
+
+.featureItem {
+  background: var(--color-base-bg);
+  padding: var(--space-3);
+  border-radius: var(--radius-squircle-lg);
+  border: 1px solid var(--color-base-border-subtle);
+  transition: all 0.3s var(--ease-3);
+}
+
+.featureItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--color-base-border);
+}
+
+.featureTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-base-text-strong);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.featureDescription {
+  color: var(--color-base-text-subtle);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.highlightBox {
+  background: var(--gradient-brand);
+  color: white;
+  padding: var(--space-5);
+  border-radius: var(--radius-squircle-lg);
+  text-align: center;
+  margin: var(--space-5) 0;
+  box-shadow: var(--shadow-3);
+}
+
+.highlightTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.highlightText {
+  font-size: 1.0625rem;
+  margin: 0;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: var(--space-5);
+  background: var(--color-base-bg);
+  border-radius: var(--radius-squircle-lg);
+  border: 1px solid var(--color-base-border-subtle);
+}
+
+.ctaTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.ctaSubtitle {
+  font-size: 1.0625rem;
+  color: var(--color-base-text-subtle);
+  margin: 0 0 var(--space-3) 0;
+  line-height: 1.6;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-6) var(--space-2) var(--space-5);
+  }
+
+  .section {
+    padding: var(--space-5) var(--space-2);
+  }
+
+  .philosophyGrid,
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tableHeaderCell,
+  .tableCell {
+    padding: var(--space-1-5);
+    font-size: 0.8125rem;
+  }
+}

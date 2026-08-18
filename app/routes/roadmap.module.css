@@ -1,0 +1,315 @@
+.container {
+  min-height: 100vh;
+  background: var(--color-base-bg-app);
+}
+
+.hero {
+  padding: var(--space-8) var(--space-2-5) var(--space-6);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: var(--color-base-text-subtle);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.section {
+  padding: var(--space-6) var(--space-2-5);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricingSection {
+  background: var(--color-base-bg);
+  border-radius: var(--radius-squircle-xl);
+  margin: var(--space-6) auto;
+  border: 1px solid var(--color-base-border-subtle);
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  text-align: center;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.sectionSubtitle {
+  font-size: 1.0625rem;
+  color: var(--color-base-text-subtle);
+  text-align: center;
+  margin: 0 0 var(--space-5) 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.roadmapTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3);
+  align-items: center;
+  background: var(--color-base-bg);
+  padding: var(--space-3);
+  border-radius: var(--radius-squircle-lg);
+  border: 1px solid var(--color-base-border-subtle);
+  transition: all 0.3s var(--ease-3);
+}
+
+.timelineItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+  border-color: var(--color-base-border);
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.phaseTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  margin: 0;
+}
+
+.phaseDescription {
+  color: var(--color-base-text);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.phaseFeatures {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.phaseFeatures li {
+  color: var(--color-base-text-subtle);
+  position: relative;
+  padding-left: var(--space-2);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.phaseFeatures li::before {
+  content: "•";
+  color: var(--color-accent-text);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.phaseFeatures li strong {
+  color: var(--color-base-text);
+}
+
+.timelineNumber {
+  width: 64px;
+  height: 64px;
+  background: var(--gradient-brand);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-2);
+  flex-shrink: 0;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.pricingCard {
+  background: var(--color-base-bg);
+  border-radius: var(--radius-squircle-lg);
+  padding: var(--space-3);
+  border: 1px solid var(--color-base-border-subtle);
+  transition: all 0.3s var(--ease-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricingCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+  border-color: var(--color-base-border);
+}
+
+.pricingCard.featured {
+  border-color: var(--color-accent-border);
+  box-shadow: var(--shadow-3);
+  position: relative;
+}
+
+.pricingCard.featured::before {
+  content: "Most Popular";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-brand);
+  color: white;
+  padding: var(--space-0-5) var(--space-2);
+  border-radius: var(--radius-squircle-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.planName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  margin: 0 0 var(--space-1) 0;
+  text-align: center;
+}
+
+.planPrice {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent-text);
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+}
+
+.planPeriod {
+  color: var(--color-base-text-subtle);
+  text-align: center;
+  margin: 0 0 var(--space-2) 0;
+  font-size: 0.875rem;
+}
+
+.planDescription {
+  color: var(--color-base-text);
+  text-align: center;
+  margin: 0 0 var(--space-2-5) 0;
+  line-height: 1.5;
+  font-size: 0.9375rem;
+}
+
+.planFeatures {
+  list-style: none;
+  margin: 0 0 var(--space-3) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex-grow: 1;
+}
+
+.planFeatures li {
+  color: var(--color-base-text-subtle);
+  position: relative;
+  padding-left: var(--space-2);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.planFeatures li::before {
+  content: "✓";
+  color: var(--color-accent-text);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.planButton {
+  margin-top: auto;
+  width: 100%;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: var(--space-5);
+  background: var(--color-base-bg);
+  border-radius: var(--radius-squircle-lg);
+  border: 1px solid var(--color-base-border-subtle);
+}
+
+.ctaTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-base-text-strong);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.ctaSubtitle {
+  font-size: 1.0625rem;
+  color: var(--color-base-text-subtle);
+  margin: 0 0 var(--space-3) 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-6) var(--space-2) var(--space-5);
+  }
+
+  .section {
+    padding: var(--space-5) var(--space-2);
+  }
+
+  .timelineItem {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-2);
+  }
+
+  .timelineNumber {
+    margin: 0 auto;
+  }
+
+  .phaseFeatures li {
+    text-align: left;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .planPrice {
+    font-size: 2rem;
+  }
+}

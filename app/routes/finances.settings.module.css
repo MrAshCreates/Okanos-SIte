@@ -1,0 +1,122 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-7);
+  color: var(--color-base-text-strong);
+  margin-bottom: var(--space-0-5);
+}
+
+.subtitle {
+  font-size: var(--font-size-2);
+  color: var(--color-base-text-muted);
+}
+
+.settingsCard {
+  margin-bottom: var(--space-4);
+}
+
+.cardIcon {
+  width: var(--size-5);
+  height: var(--size-5);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--space-1-5);
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.profileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2);
+  background: var(--color-base-bg-subtle);
+  border-radius: var(--radius-2);
+}
+
+.profileLabel {
+  font-weight: var(--font-weight-6);
+  color: var(--color-base-text-muted);
+}
+
+.profileValue {
+  color: var(--color-base-text-strong);
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.settingItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.settingDescription {
+  font-size: var(--font-size-0);
+  color: var(--color-base-text-muted);
+  line-height: 1.4;
+}
+
+.saveButton {
+  width: 100%;
+}
+
+.buttonIcon {
+  width: var(--size-4);
+  height: var(--size-4);
+  margin-right: var(--space-1);
+}
+
+.appearanceSection {
+  padding: var(--space-2) 0;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) 0;
+}
+
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.aboutText {
+  line-height: 1.6;
+  color: var(--color-base-text);
+}
+
+.aboutLink {
+  color: var(--color-accent-bg);
+  text-decoration: none;
+  font-weight: var(--font-weight-6);
+}
+
+.aboutLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+}

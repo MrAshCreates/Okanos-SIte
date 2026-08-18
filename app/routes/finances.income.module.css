@@ -1,0 +1,278 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-7);
+  color: var(--color-base-text-strong);
+  margin-bottom: var(--space-0-5);
+}
+
+.modeTag {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-4);
+  color: var(--color-accent-bg);
+  opacity: 0.8;
+}
+
+.subtitle {
+  font-size: var(--font-size-2);
+  color: var(--color-base-text-muted);
+}
+
+.buttonIcon {
+  width: var(--size-4);
+  height: var(--size-4);
+  margin-right: var(--space-1);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.summaryValue {
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-7);
+  color: var(--color-base-text-strong);
+}
+
+.sourcesCard,
+.scenariosCard {
+  margin-bottom: var(--space-4);
+}
+
+.cardIcon {
+  width: var(--size-5);
+  height: var(--size-5);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--space-1-5);
+}
+
+.sourcesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sourceItem {
+  padding: var(--space-3);
+  background: var(--color-base-bg-subtle);
+  border-radius: var(--radius-3);
+  border-left: 3px solid var(--color-success-bg);
+}
+
+.sourceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-1);
+}
+
+.sourceName {
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-2);
+  color: var(--color-base-text-strong);
+}
+
+.sourceAmount {
+  font-weight: var(--font-weight-7);
+  font-size: var(--font-size-3);
+  color: var(--color-success-bg);
+}
+
+.sourceDetails {
+  font-size: var(--font-size-1);
+  color: var(--color-base-text-muted);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  color: var(--color-base-text-muted);
+}
+
+.emptyIcon {
+  width: var(--size-16);
+  height: var(--size-16);
+  margin: 0 auto var(--space-3);
+  opacity: 0.3;
+}
+
+.emptyState h3 {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-6);
+  color: var(--color-base-text);
+  margin-bottom: var(--space-2);
+}
+
+.scenariosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-3);
+}
+
+.scenarioCard {
+  padding: var(--space-3);
+  background: var(--color-base-bg-subtle);
+  border-radius: var(--radius-3);
+  border: 2px solid var(--color-base-border);
+  transition: all 0.2s;
+}
+
+.scenarioCard:hover {
+  border-color: var(--color-accent-bg);
+  background: var(--color-base-bg-hover);
+}
+
+.scenarioName {
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-2);
+  color: var(--color-base-text-strong);
+  margin-bottom: var(--space-2);
+}
+
+.scenarioMetrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.scenarioMetric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metricLabel {
+  font-size: var(--font-size-1);
+  color: var(--color-base-text-muted);
+}
+
+.metricValue {
+  font-weight: var(--font-weight-6);
+  color: var(--color-base-text-strong);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.submitButton {
+  width: 100%;
+}
+
+.summaryCard,
+.incomeList,
+.scenariosCard {
+  margin-bottom: var(--space-4);
+}
+
+.totalIncome {
+  font-size: var(--font-size-7);
+  font-weight: var(--font-weight-7);
+  color: var(--color-success-bg);
+  margin-bottom: var(--space-1);
+}
+
+.netIncome {
+  font-size: var(--font-size-2);
+  color: var(--color-base-text-muted);
+}
+
+.incomeList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.incomeItem {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.incomeHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.incomeActions {
+  display: flex;
+  gap: var(--space-0-5);
+}
+
+.actionIcon {
+  width: var(--size-4);
+  height: var(--size-4);
+}
+
+.incomeIcon {
+  width: var(--size-5);
+  height: var(--size-5);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--space-1-5);
+}
+
+.incomeMetrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+
+.incomeMetric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.scenarioLabel {
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-2);
+  color: var(--color-base-text-strong);
+  margin-bottom: var(--space-2);
+}
+
+.scenarioMetricLabel {
+  font-size: var(--font-size-1);
+  color: var(--color-base-text-muted);
+}
+
+.scenarioMetricValue {
+  font-weight: var(--font-weight-6);
+  color: var(--color-base-text-strong);
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .scenariosGrid {
+    grid-template-columns: 1fr;
+  }
+}
