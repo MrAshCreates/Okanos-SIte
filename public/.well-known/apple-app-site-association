@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "HXG99775QU.dev.asherwinstead.Okanos",
+        "paths": ["/app/*", "/finances/*", "/cards", "/learn", "*"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["HXG99775QU.dev.asherwinstead.Okanos"]
+  }
+}
